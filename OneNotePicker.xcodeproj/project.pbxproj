@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		B56D0E66193FE463004C99CA /* OneNotePickerAggregate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B56D0E67193FE463004C99CA /* Build configuration list for PBXAggregateTarget "OneNotePickerAggregate" */;
+			buildPhases = (
+				B56D0E6A193FE540004C99CA /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OneNotePickerAggregate;
+			productName = OneNotePickerAggregate;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		B5643ABF1940D4800015F8F0 /* OneNotePickerControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B56D0E51193FD410004C99CA /* OneNotePickerControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5643AC01940D48C0015F8F0 /* OneNotePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = B56D0E63193FE0A3004C99CA /* OneNotePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5643ADC1942545D0015F8F0 /* OneNotePickerNotebook.h in Headers */ = {isa = PBXBuildFile; fileRef = B5643ADA1942545D0015F8F0 /* OneNotePickerNotebook.h */; };
+		B5643ADD1942545D0015F8F0 /* OneNotePickerNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = B5643ADB1942545D0015F8F0 /* OneNotePickerNotebook.m */; };
+		B5643AE019425A0B0015F8F0 /* OneNotePickerNavItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B5643ADE19425A0B0015F8F0 /* OneNotePickerNavItem.h */; };
+		B5643AE119425A0B0015F8F0 /* OneNotePickerNavItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B5643ADF19425A0B0015F8F0 /* OneNotePickerNavItem.m */; };
+		B5643AE4194269C50015F8F0 /* OneNotePickerSection.h in Headers */ = {isa = PBXBuildFile; fileRef = B5643AE2194269C50015F8F0 /* OneNotePickerSection.h */; };
+		B5643AE5194269C50015F8F0 /* OneNotePickerSection.m in Sources */ = {isa = PBXBuildFile; fileRef = B5643AE3194269C50015F8F0 /* OneNotePickerSection.m */; };
+		B5643AE8194269D60015F8F0 /* OneNotePickerSectionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = B5643AE6194269D60015F8F0 /* OneNotePickerSectionGroup.h */; };
+		B5643AE9194269D60015F8F0 /* OneNotePickerSectionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B5643AE7194269D60015F8F0 /* OneNotePickerSectionGroup.m */; };
+		B56D0E5E193FDDB1004C99CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B56D0E5C193FDDB1004C99CA /* InfoPlist.strings */; };
+		B56D0E65193FE0A3004C99CA /* OneNotePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56D0E64193FE0A3004C99CA /* OneNotePickerController.m */; };
+		B59661F21949205D00B31371 /* iPad in Resources */ = {isa = PBXBuildFile; fileRef = B59661F01949205D00B31371 /* iPad */; };
+		B59661F31949205D00B31371 /* iPhone in Resources */ = {isa = PBXBuildFile; fileRef = B59661F11949205D00B31371 /* iPhone */; };
+		B59661F51949211C00B31371 /* OneNotePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59661F41949211C00B31371 /* OneNotePickerView.xib */; };
+		B59661F7194B678300B31371 /* OneNotePickerView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59661F6194B678300B31371 /* OneNotePickerView_iPad.xib */; };
+		B5DDEEDC1946227F0021D69C /* OneNotePickerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDEEDA1946227F0021D69C /* OneNotePickerConstants.h */; };
+		B5DDEEE01947B67A0021D69C /* OneNotePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B5DDEEDE1947B67A0021D69C /* OneNotePickerViewController.h */; };
+		B5DDEEE11947B67A0021D69C /* OneNotePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DDEEDF1947B67A0021D69C /* OneNotePickerViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B5643ADA1942545D0015F8F0 /* OneNotePickerNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerNotebook.h; sourceTree = "<group>"; };
+		B5643ADB1942545D0015F8F0 /* OneNotePickerNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneNotePickerNotebook.m; sourceTree = "<group>"; };
+		B5643ADE19425A0B0015F8F0 /* OneNotePickerNavItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerNavItem.h; sourceTree = "<group>"; };
+		B5643ADF19425A0B0015F8F0 /* OneNotePickerNavItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneNotePickerNavItem.m; sourceTree = "<group>"; };
+		B5643AE2194269C50015F8F0 /* OneNotePickerSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerSection.h; sourceTree = "<group>"; };
+		B5643AE3194269C50015F8F0 /* OneNotePickerSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneNotePickerSection.m; sourceTree = "<group>"; };
+		B5643AE6194269D60015F8F0 /* OneNotePickerSectionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerSectionGroup.h; sourceTree = "<group>"; };
+		B5643AE7194269D60015F8F0 /* OneNotePickerSectionGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneNotePickerSectionGroup.m; sourceTree = "<group>"; };
+		B56D0E2B193FD13B004C99CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B56D0E3C193FD13B004C99CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B56D0E51193FD410004C99CA /* OneNotePickerControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerControllerDelegate.h; sourceTree = "<group>"; };
+		B56D0E56193FDDB1004C99CA /* OneNotePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneNotePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56D0E57193FDDB1004C99CA /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		B56D0E5B193FDDB1004C99CA /* OneNotePicker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneNotePicker-Info.plist"; sourceTree = "<group>"; };
+		B56D0E5D193FDDB1004C99CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B56D0E5F193FDDB1004C99CA /* OneNotePicker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneNotePicker-Prefix.pch"; sourceTree = "<group>"; };
+		B56D0E63193FE0A3004C99CA /* OneNotePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerController.h; sourceTree = "<group>"; };
+		B56D0E64193FE0A3004C99CA /* OneNotePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneNotePickerController.m; sourceTree = "<group>"; };
+		B59661F01949205D00B31371 /* iPad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPad; path = Resources/iPad; sourceTree = "<group>"; };
+		B59661F11949205D00B31371 /* iPhone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iPhone; path = Resources/iPhone; sourceTree = "<group>"; };
+		B59661F41949211C00B31371 /* OneNotePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OneNotePickerView.xib; path = Resources/OneNotePickerView.xib; sourceTree = "<group>"; };
+		B59661F6194B678300B31371 /* OneNotePickerView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OneNotePickerView_iPad.xib; path = Resources/OneNotePickerView_iPad.xib; sourceTree = "<group>"; };
+		B5DDEEDA1946227F0021D69C /* OneNotePickerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerConstants.h; sourceTree = "<group>"; };
+		B5DDEEDE1947B67A0021D69C /* OneNotePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneNotePickerViewController.h; sourceTree = "<group>"; };
+		B5DDEEDF1947B67A0021D69C /* OneNotePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneNotePickerViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B56D0E53193FDDB1004C99CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5643AC519423BF60015F8F0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B59661F41949211C00B31371 /* OneNotePickerView.xib */,
+				B59661F6194B678300B31371 /* OneNotePickerView_iPad.xib */,
+				B59661F01949205D00B31371 /* iPad */,
+				B59661F11949205D00B31371 /* iPhone */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B56D0E1F193FD13B004C99CA = {
+			isa = PBXGroup;
+			children = (
+				B56D0E2D193FD13B004C99CA /* OneNotePicker */,
+				B56D0E5A193FDDB1004C99CA /* Supporting Files */,
+				B5643AC519423BF60015F8F0 /* Resources */,
+				B56D0E2A193FD13B004C99CA /* Frameworks */,
+				B56D0E29193FD13B004C99CA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B56D0E29193FD13B004C99CA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B56D0E56193FDDB1004C99CA /* OneNotePicker.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B56D0E2A193FD13B004C99CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B56D0E2B193FD13B004C99CA /* Foundation.framework */,
+				B56D0E3C193FD13B004C99CA /* UIKit.framework */,
+				B56D0E57193FDDB1004C99CA /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B56D0E2D193FD13B004C99CA /* OneNotePicker */ = {
+			isa = PBXGroup;
+			children = (
+				B5DDEEDA1946227F0021D69C /* OneNotePickerConstants.h */,
+				B56D0E51193FD410004C99CA /* OneNotePickerControllerDelegate.h */,
+				B56D0E63193FE0A3004C99CA /* OneNotePickerController.h */,
+				B56D0E64193FE0A3004C99CA /* OneNotePickerController.m */,
+				B5DDEEDE1947B67A0021D69C /* OneNotePickerViewController.h */,
+				B5DDEEDF1947B67A0021D69C /* OneNotePickerViewController.m */,
+				B5643ADA1942545D0015F8F0 /* OneNotePickerNotebook.h */,
+				B5643ADB1942545D0015F8F0 /* OneNotePickerNotebook.m */,
+				B5643ADE19425A0B0015F8F0 /* OneNotePickerNavItem.h */,
+				B5643ADF19425A0B0015F8F0 /* OneNotePickerNavItem.m */,
+				B5643AE2194269C50015F8F0 /* OneNotePickerSection.h */,
+				B5643AE3194269C50015F8F0 /* OneNotePickerSection.m */,
+				B5643AE6194269D60015F8F0 /* OneNotePickerSectionGroup.h */,
+				B5643AE7194269D60015F8F0 /* OneNotePickerSectionGroup.m */,
+			);
+			path = OneNotePicker;
+			sourceTree = "<group>";
+		};
+		B56D0E5A193FDDB1004C99CA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B56D0E5B193FDDB1004C99CA /* OneNotePicker-Info.plist */,
+				B56D0E5C193FDDB1004C99CA /* InfoPlist.strings */,
+				B56D0E5F193FDDB1004C99CA /* OneNotePicker-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = OneNotePicker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B5643ABE1940D4760015F8F0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5DDEEE01947B67A0021D69C /* OneNotePickerViewController.h in Headers */,
+				B5643AE4194269C50015F8F0 /* OneNotePickerSection.h in Headers */,
+				B5643AE8194269D60015F8F0 /* OneNotePickerSectionGroup.h in Headers */,
+				B5643ADC1942545D0015F8F0 /* OneNotePickerNotebook.h in Headers */,
+				B5643AC01940D48C0015F8F0 /* OneNotePickerController.h in Headers */,
+				B5643AE019425A0B0015F8F0 /* OneNotePickerNavItem.h in Headers */,
+				B5DDEEDC1946227F0021D69C /* OneNotePickerConstants.h in Headers */,
+				B5643ABF1940D4800015F8F0 /* OneNotePickerControllerDelegate.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B56D0E55193FDDB1004C99CA /* OneNotePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B56D0E60193FDDB1004C99CA /* Build configuration list for PBXNativeTarget "OneNotePicker" */;
+			buildPhases = (
+				B56D0E52193FDDB1004C99CA /* Sources */,
+				B56D0E53193FDDB1004C99CA /* Frameworks */,
+				B56D0E54193FDDB1004C99CA /* Resources */,
+				B5643ABE1940D4760015F8F0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneNotePicker;
+			productName = OneNotePicker;
+			productReference = B56D0E56193FDDB1004C99CA /* OneNotePicker.framework */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B56D0E20193FD13B004C99CA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Microsoft;
+			};
+			buildConfigurationList = B56D0E23193FD13B004C99CA /* Build configuration list for PBXProject "OneNotePicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B56D0E1F193FD13B004C99CA;
+			productRefGroup = B56D0E29193FD13B004C99CA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B56D0E55193FDDB1004C99CA /* OneNotePicker */,
+				B56D0E66193FE463004C99CA /* OneNotePickerAggregate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B56D0E54193FDDB1004C99CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B59661F31949205D00B31371 /* iPhone in Resources */,
+				B56D0E5E193FDDB1004C99CA /* InfoPlist.strings in Resources */,
+				B59661F21949205D00B31371 /* iPad in Resources */,
+				B59661F51949211C00B31371 /* OneNotePickerView.xib in Resources */,
+				B59661F7194B678300B31371 /* OneNotePickerView_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B56D0E6A193FE540004C99CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Sets the target folders and the final framework product.\nFMK_NAME=OneNotePicker\nFMK_VERSION=1.0\n\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n\n# Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# Creates and renews the final product folder.\nmkdir -p \"${INSTALL_DIR}\"\nmkdir -p \"${INSTALL_DIR}/Versions\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources\"\nmkdir -p \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers\"\n\n# Creates the internal links.\n# It MUST uses relative path, otherwise will not work when the folder is copied/moved.\nln -s \"${FMK_VERSION}\" \"${INSTALL_DIR}/Versions/Current\"\nln -s \"Versions/Current/Headers\" \"${INSTALL_DIR}/Headers\"\nln -s \"Versions/Current/Resources\" \"${INSTALL_DIR}/Resources\"\nln -s \"Versions/Current/${FMK_NAME}\" \"${INSTALL_DIR}/${FMK_NAME}\"\n\n# Copies the headers and resources files to the final product folder.\ncp -R \"${DEVICE_DIR}/Headers/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Headers/\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/\"\n\n# Removes the binary and header from the resources folder.\nrm -r \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/Headers\" \"${INSTALL_DIR}/Versions/${FMK_VERSION}/Resources/${FMK_NAME}\"\n\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/Versions/${FMK_VERSION}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B56D0E52193FDDB1004C99CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5643AE9194269D60015F8F0 /* OneNotePickerSectionGroup.m in Sources */,
+				B5643AE5194269C50015F8F0 /* OneNotePickerSection.m in Sources */,
+				B56D0E65193FE0A3004C99CA /* OneNotePickerController.m in Sources */,
+				B5DDEEE11947B67A0021D69C /* OneNotePickerViewController.m in Sources */,
+				B5643AE119425A0B0015F8F0 /* OneNotePickerNavItem.m in Sources */,
+				B5643ADD1942545D0015F8F0 /* OneNotePickerNotebook.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B56D0E5C193FDDB1004C99CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B56D0E5D193FDDB1004C99CA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B56D0E49193FD13B004C99CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B56D0E4A193FD13B004C99CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B56D0E61193FDDB1004C99CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneNotePicker/OneNotePicker-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OneNotePicker/OneNotePicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		B56D0E62193FDDB1004C99CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OneNotePicker/OneNotePicker-Prefix.pch";
+				INFOPLIST_FILE = "OneNotePicker/OneNotePicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				MACH_O_TYPE = mh_object;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		B56D0E68193FE463004C99CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B56D0E69193FE463004C99CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B56D0E23193FD13B004C99CA /* Build configuration list for PBXProject "OneNotePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56D0E49193FD13B004C99CA /* Debug */,
+				B56D0E4A193FD13B004C99CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B56D0E60193FDDB1004C99CA /* Build configuration list for PBXNativeTarget "OneNotePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56D0E61193FDDB1004C99CA /* Debug */,
+				B56D0E62193FDDB1004C99CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B56D0E67193FE463004C99CA /* Build configuration list for PBXAggregateTarget "OneNotePickerAggregate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56D0E68193FE463004C99CA /* Debug */,
+				B56D0E69193FE463004C99CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B56D0E20193FD13B004C99CA /* Project object */;
+}
