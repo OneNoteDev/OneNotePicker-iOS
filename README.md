@@ -4,6 +4,7 @@ OneNotePickerLibrary for IOS README
 ### Version info
 Version 1.0
 
+Microsoft Open Technologies, Inc. (MS Open Tech) has built the OneNote Picker for iOS, an open source project that strives to help iOS developers use the OneNote API from their apps.
 
 ### Prerequisites
 
