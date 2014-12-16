@@ -51,14 +51,10 @@ NSString *const OneNotePickerControllerSystemError = @"OneNotePickerControllerSy
 
 - (void)loadNextNavItem
 {
-	if (self.navItemsToLoad.count == 0 && self.nextNavItemsToLoad != 0) {
-		[self.navItemsToLoad addObjectsFromArray:self.nextNavItemsToLoad];
-		[self.nextNavItemsToLoad removeAllObjects];
-	}
 	if (self.navItemsToLoad.count) {
 		OneNotePickerNavItem *item = [self.navItemsToLoad firstObject];
 		[self.navItemsToLoad removeObjectAtIndex:0];
-		[item loadChildrenWithToken:self.accessToken completionBlock:^(NSDictionary *errorInfo) {
+		[item getOneNoteEntitiesWithToken:self.accessToken completionBlock:^(NSDictionary *errorInfo) {
 			if (errorInfo) {
 				void (^notifyDelegateBlock) () = ^{
 					if ([self.delegate respondsToSelector:@selector(oneNotePickerController:didErrorWithInfo:)]) {
@@ -70,9 +66,6 @@ NSString *const OneNotePickerControllerSystemError = @"OneNotePickerControllerSy
 				} else {
 					self.onAppearHandler = notifyDelegateBlock;
 				}
-			} else {
-				[self.nextNavItemsToLoad addObjectsFromArray:item.sectionGroups];
-				[self loadNextNavItem];
 			}
 		}];
 	}

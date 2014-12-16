@@ -30,7 +30,7 @@ extern NSString * const kOneNotePickerNavItemLoadedDataNotification;
 @property (readonly, nonatomic) BOOL isLoaded;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
-- (void)loadChildrenWithToken:(NSString *)token completionBlock:(void(^)(NSDictionary *errorInfo))completionBlock;
+- (void)getOneNoteEntitiesWithToken:(NSString *)token completionBlock:(void(^)(NSDictionary *errorInfo))completionBlock;
 - (NSDictionary *)resultDictionary; // Only relevant for sections
 - (void)reset; // Delete all data and stop connections; ONLY call this on the root nav item
 

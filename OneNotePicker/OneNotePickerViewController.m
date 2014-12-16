@@ -25,7 +25,12 @@ static const NSUInteger topBottomMargin = 30;
 																	   target:self
 																	   action:@selector(cancelButtonClicked:)];
 		self.navigationItem.rightBarButtonItem = rightButton;
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:kOneNotePickerNavItemLoadedDataNotification object:self.navItem];
+        
+        if (navItem.type == kOneNotePickerNavItemTypeRoot){
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData) name:kOneNotePickerNavItemLoadedDataNotification object:self.navItem];
+        } else {
+            [self reloadData];
+        }
 	}
 	return self;
 }
