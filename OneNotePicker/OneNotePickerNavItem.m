@@ -13,8 +13,6 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 
 @interface OneNotePickerNavItem () <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
-@property (strong, nonatomic) NSURLConnection *sectionsConnection;
-@property (strong, nonatomic) NSURLConnection *sectionGroupsConnection;
 @property (copy, nonatomic) void (^loadCompletionBlock)(NSDictionary *);
 @property (strong, nonatomic) NSMutableData *data; // For loading URLs into
 
@@ -22,7 +20,7 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 
 @implementation OneNotePickerNavItem
 
-- (id)initWithDictionary:(NSDictionary *)dictionary
+- (id)initWithDictionary:(NSDictionary *)dictionary;
 {
 	if (self = [self init]) {
 		jsonData_ = dictionary;
@@ -36,70 +34,38 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 	return self;
 }
 
-- (BOOL)isLoaded
-{
-	return self.sections != nil || (self.sectionGroups != nil && self.type == kOneNotePickerNavItemTypeRoot);
-}
-
 - (NSDictionary *)resultDictionary
 {
 	return nil;
 }
 
-- (void)loadChildrenWithToken:(NSString *)token completionBlock:(void (^)(NSDictionary *))completionBlock
+- (BOOL)isLoaded
 {
-	if (self.type != kOneNotePickerNavItemTypeSection && !self.sectionGroupsConnection) {
-		BOOL iPad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
-		NSURL *URL = [self URLForSectionGroups];
-		if (self.type == kOneNotePickerNavItemTypeRoot) {
-			URL = [self URLForNotebooks];
-		}
-		self.loadCompletionBlock = completionBlock;
+	return self.sections != nil || (self.sectionGroups != nil && self.type == kOneNotePickerNavItemTypeRoot);
+}
+
+- (void)getOneNoteEntitiesWithToken:(NSString *)token completionBlock:(void (^)(NSDictionary *))completionBlock
+{
+    BOOL iPad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+    NSURL *URL = [self URLForOneNoteHierarchy];
+        
+    self.loadCompletionBlock = completionBlock;
 		
-		NSString *userAgent = iPad ? @"iPad OneNotePicker" :  @"iPhone OneNotePicker";
-		NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-		[request addValue:userAgent forHTTPHeaderField:@"User-Agent"];
-		[request addValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
-		self.sectionGroupsConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
-		
-		if (self.type != kOneNotePickerNavItemTypeRoot) {
-			URL = [self URLForSections];
-			NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
-			[request addValue:userAgent forHTTPHeaderField:@"User-Agent"];
-			[request addValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
-			self.sectionsConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
-		} else {
-			[self.sectionGroupsConnection start];
-		}
-	}
+    NSString *userAgent = iPad ? @"iPad OneNotePicker" :  @"iPhone OneNotePicker";
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+    [request addValue:userAgent forHTTPHeaderField:@"User-Agent"];
+    [request addValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+    
+    [connection start];
 }
 
-- (NSURL *)URLForSections
+- (NSURL *)URLForOneNoteHierarchy
 {
-	return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", [self baseAPIString], @"Sections"]];
-}
-
-- (NSURL *)URLForSectionGroups
-{
-	return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", [self baseAPIString], @"SectionGroups"]];
-}
-
-- (NSURL *)URLForNotebooks
-{
-	return [NSURL URLWithString:[self baseAPIString]];
-}
-
-- (NSString *)baseAPIString
-{
-	NSString *groupType = self.type == kOneNotePickerNavItemTypeSectionGroup ? @"SectionGroups" : @"Notebooks";
-	NSString *base = [NSString stringWithFormat:@"%@/%@",
+	return [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",
 					  kOneNotePickerRootAPIURL,
-					  groupType];
-	if (self.type == kOneNotePickerNavItemTypeRoot) {
-		return base;
-	} else {
-		return [NSString stringWithFormat:@"%@/%@", base, self.ID];
-	}
+					  @"notebooks?$expand=sections,sectionGroups($expand=sections,sectionGroups($expand=sections;$levels=max))"]];
 }
 
 - (OneNotePickerNavItemType)type
@@ -110,10 +76,6 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 - (void)reset
 {
 	jsonData_ = nil;
-	[self.sectionsConnection cancel];
-	[self.sectionGroupsConnection cancel];
-	self.sectionsConnection = nil;
-	self.sectionGroupsConnection = nil;
 	self.sections = nil;
 	self.sectionGroups = nil;
 	self.ID = nil;
@@ -139,6 +101,8 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 	NSError *error;
 	NSDictionary *json = [NSJSONSerialization JSONObjectWithData:self.data options:0 error:&error];
 	[self.data setLength:0];
+    
+    // Handle connection errors
 	if (error) {
 		self.loadCompletionBlock(@{
 								   OneNotePickerControllerIsAPIError: @(NO),
@@ -147,6 +111,7 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 		return;
 	}
 	
+    // The OneNote API might return an error - handle this case
 	if (json[@"error"]) {
 		self.loadCompletionBlock(@{
 								   OneNotePickerControllerIsAPIError: @(YES),
@@ -156,31 +121,52 @@ NSString * const kOneNotePickerNavItemLoadedDataNotification = @"OneNotePickerNa
 								   });
 	}
 	
-	NSMutableArray *array = [NSMutableArray array];
-	for (NSDictionary *item in json[@"value"]) {
-		OneNotePickerNavItem *navItem = nil;
-		if (connection == self.sectionGroupsConnection) {
-			if (self.type == kOneNotePickerNavItemTypeRoot) {
-				navItem = [[OneNotePickerNotebook alloc] initWithDictionary:item];
-			} else {
-				navItem = [[OneNotePickerSectionGroup alloc] initWithDictionary:item];
-			}
-		} else {
-			navItem = [[OneNotePickerSection alloc] initWithDictionary:item];
-		}
-		[array addObject:navItem];
+    // No error in the OneNote API - Parse out the returned JSON response
+	NSMutableArray *notebooksArray = [NSMutableArray array];
+	for (NSDictionary *notebookItem in json[@"value"]) {
+        // Build all notebooks
+		OneNotePickerNotebook *notebookNavItem = nil;
+        notebookNavItem = [[OneNotePickerNotebook alloc] initWithDictionary:notebookItem];
+        
+        // Get the notebooks' sections
+        notebookNavItem.sections = [self getSectionsNavItemArrayFromParent:notebookItem];
+        
+        // Get the notebooks' sectionGroups
+        notebookNavItem.sectionGroups = [self getSectionGroupsNavItemArrayFromParent:notebookItem];;
+        
+        [notebooksArray addObject:notebookNavItem];
 	}
-	if (connection == self.sectionGroupsConnection) {
-		self.sectionGroups = array;
-		if (self.loadCompletionBlock) {
-			self.loadCompletionBlock(nil);
-			self.loadCompletionBlock = nil;
-		}
-		[[NSNotificationCenter defaultCenter] postNotificationName:kOneNotePickerNavItemLoadedDataNotification object:self];
-	} else {
-		self.sections = array;
-		[self.sectionGroupsConnection start];
-	}
+    
+    self.sectionGroups = notebooksArray;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOneNotePickerNavItemLoadedDataNotification object:self];
+}
+
+-(NSArray *)getSectionGroupsNavItemArrayFromParent:(NSDictionary *)parentItem{
+    NSMutableArray *sectionGroupsArray = [NSMutableArray array];
+    for (NSDictionary *sectionGroupItem in parentItem[@"sectionGroups"]) {
+        OneNotePickerSectionGroup *sectionGroupNavItem = nil;
+        sectionGroupNavItem = [[OneNotePickerSectionGroup alloc] initWithDictionary:sectionGroupItem];
+        
+        // Get the notebooks' sections
+        sectionGroupNavItem.sections = [self getSectionsNavItemArrayFromParent:sectionGroupItem];
+        
+        // Get the notebooks' sectionGroups
+        sectionGroupNavItem.sectionGroups = [self getSectionGroupsNavItemArrayFromParent:sectionGroupItem];;
+        
+        [sectionGroupsArray addObject:sectionGroupNavItem];
+    }
+    return sectionGroupsArray;
+}
+
+-(NSArray *)getSectionsNavItemArrayFromParent:(NSDictionary *)parentItem{
+    NSMutableArray *sectionsArray = [NSMutableArray array];
+    for (NSDictionary *sectionItem in parentItem[@"sections"]) {
+        OneNotePickerSection *sectionNavItem = nil;
+        sectionNavItem = [[OneNotePickerSection alloc] initWithDictionary:sectionItem];
+        [sectionsArray addObject:sectionNavItem];
+    }
+    return sectionsArray;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
